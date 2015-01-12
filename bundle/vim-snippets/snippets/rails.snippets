@@ -42,6 +42,7 @@ snippet defcreate
 			flash[:notice] = '$2 was successfully created.'
 			redirect_to @$1
 		else
+			flash.now[:errors] = @$1.errors.full_messages
 			render :new
 		end
 	end
@@ -57,11 +58,6 @@ snippet defedit
 snippet defindex
 	def index
 		@${1:model_class_name} = ${2:ModelClassName}.all
-
-		respond_to do |format|
-			format.html # index.html.erb
-			format.xml  { render xml: @$1s }
-		end
 	end
 snippet defnew
 	def new
@@ -79,9 +75,14 @@ snippet defupdate
 		  flash[:notice] = '$2 was successfully updated.'
 		  redirect_to @$1
 		else
+		  flash.now[:errors] = @$1.errors.full_messages
 		  render :edit
 		end
 	end
+snippet defparams
+	def ${1:name_space}_params
+		params.require(:$1).permit(${2})
+	end${0}
 snippet dele delegate .. to
 	delegate :${1:methods}, to: :${0:object}
 snippet dele delegate .. to .. prefix .. allow_nil
