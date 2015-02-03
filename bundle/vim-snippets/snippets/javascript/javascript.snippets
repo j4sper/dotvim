@@ -260,3 +260,39 @@ snippet cdir
 # setTimeout function
 snippet timeout
 	setTimeout(function () {${0}}${2}, ${1:10});
+snippet bc
+	Backbone.Collection.extend({
+	  ${1}
+	});${0}
+snippet bm
+	Backbone.Model.extend({
+	  ${1}
+	});${0}
+snippet bv
+	Backbone.View.extend({
+	  ${1}
+	});${0}
+snippet bb
+	Backbone${0}
+snippet rend
+	render: function() {
+	  var content = this.template({${1}});
+	  this.$el.html(content);
+	  return this;
+	}${0}
+snippet init
+	initialize: function() {
+	  this.listenTo(this.${1}, ${2}, this.${3});
+	}${0}
+snippet bnav
+	Backbone.history.navigate(${1}, { trigger: true });${0}
+snippet bstart
+	Backbone.history.start()${0}
+snippet rts
+	routes: {
+	  "${1}": "${2}",
+	}${0}
+snippet evt
+	events: {
+	  "${1}": "${2}",
+	}${0}
