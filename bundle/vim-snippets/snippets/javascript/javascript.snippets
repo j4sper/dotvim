@@ -287,12 +287,20 @@ snippet init
 snippet bnav
 	Backbone.history.navigate(${1}, { trigger: true });${0}
 snippet bstart
-	Backbone.history.start()${0}
+	Backbone.history.start();${0}
 snippet rts
 	routes: {
 	  "${1}": "${2}",
-	}${0}
+	  "${3}": "${4}",
+	  "${5}": "${6}",
+	  "${7}": "${8}",
+	},${0}
 snippet evt
 	events: {
 	  "${1}": "${2}",
-	}${0}
+	  "${3}": "${4}",
+	  "${5}": "${6}",
+	  "${7}": "${8}",
+	},${0}
+snippet nv
+	var view = new ${1:NS}.Views.${2:ViewName}({${3}});${0}
