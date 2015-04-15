@@ -45,3 +45,4 @@ vmap <C-c> :w !pbcopy<CR><CR>
 execute pathogen#infect()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 :ab cp CtrlP
+let NERDTreeDirArrows=0
